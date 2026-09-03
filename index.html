@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>Expense Tracker</h1>
+            <p>Gestioná y controlá tus gastos</p>
+        </header>
+
+        <section class="summary">
+
+            <div class="summary-card">
+                <span>Total gastado</span>
+                <strong id="totalGastos">$ 0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span>Cantidad de gastos</span>
+                <strong id="cantidadGastos">0</strong>
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <h2>Agregar gasto</h2>
+
+            <form id="formGasto">
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input
+                        type="text"
+                        id="descripcion"
+                        placeholder="Ej: Supermercado"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="monto">Monto</label>
+                    <input
+                        type="number"
+                        id="monto"
+                        placeholder="Ej: 1500"
+                        min="1"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+
+                    <select id="categoria" required>
+                        <option value="">Seleccionar categoría</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Ocio">Ocio</option>
+                        <option value="Hogar">Hogar</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input
+                        type="date"
+                        id="fecha"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Agregar gasto
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="expenses-section">
+
+            <div class="section-header">
+
+                <h2>Mis gastos</h2>
+
+                <select id="filtroCategoria">
+                    <option value="Todos">Todas las categorías</option>
+                    <option value="Comida">Comida</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Ocio">Ocio</option>
+                    <option value="Hogar">Hogar</option>
+                    <option value="Otros">Otros</option>
+                </select>
+
+            </div>
+
+            <div id="listaGastos" class="expenses-list">
+                <!-- Los gastos se generan desde JavaScript -->
+            </div>
+
+            <p id="mensajeVacio" class="empty-message">
+                No hay gastos registrados.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
